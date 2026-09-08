@@ -178,6 +178,16 @@
   .ledger-cat{ font-size:0.8rem; color:var(--brass); }
   .ledger-title{ font-family:'Fraunces', serif; font-size:1.28rem; font-weight:500; }
   .ledger-desc{ color:var(--ink-soft); font-size:0.98rem; }
+  .ledger-links{
+    display:flex; flex-wrap:wrap; gap:20px;
+    margin-top:12px;
+  }
+  .ledger-links a{
+    font-size:0.85rem;
+    color:var(--brass);
+    text-decoration:none;
+  }
+  .ledger-links a:hover{ color:var(--ink); }
 
   /* ---------- MARKETS ---------- */
   .markets-grid{
@@ -305,10 +315,11 @@
   }
   .footer-grid{
     display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
+    grid-template-columns:1.4fr 1fr 1fr 1fr;
     gap:30px;
     margin-bottom:34px;
   }
+  @media (max-width:900px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
   @media (max-width:700px){ .footer-grid{ grid-template-columns:1fr; gap:26px; } }
   .footer-brand p{ font-size:0.92rem; color:var(--slate); max-width:36ch; margin-top:14px; }
   .footer-col h4{ font-size:0.8rem; color:var(--slate); margin-bottom:14px; font-weight:500; }
@@ -364,6 +375,7 @@
         <li><a href="#capabilities">Capabilities</a></li>
         <li><a href="#markets">Markets</a></li>
         <li><a href="#team">Team</a></li>
+        <li><a href="listings.html">Listings</a></li>
       </ul>
     </nav>
     <a class="nav-cta" href="mailto:kate@clozingcre.com?subject=Inquiry%20from%20Commercial%20Capital%20Group">Schedule a call</a>
@@ -424,7 +436,12 @@
     <div class="ledger-row">
       <div class="ledger-cat">Placemaking</div>
       <div class="ledger-title">Brand-to-Space Matching</div>
-      <div class="ledger-desc">Curating tenants that elevate properties: activating commercial real estate as a platform for culture and commerce.</div>
+      <div class="ledger-desc">Curating tenants that elevate properties: activating commercial real estate as a platform for culture and commerce.
+        <div class="ledger-links">
+          <a href="https://clozingcre.com/brand-to-space/june12/recap.html">850 N Palm Canyon: Open House Recap →</a>
+          <a href="https://clozingcre.com/brand-to-space/june12/850-modernism-week.html">850 N Palm Canyon: Modernism Week →</a>
+        </div>
+      </div>
     </div>
     <div class="ledger-row">
       <div class="ledger-cat">Exchange &amp; Valuation</div>
@@ -597,6 +614,13 @@
           <li><a href="#capabilities">Advisory</a></li>
           <li><a href="#capabilities">Development</a></li>
           <li><a href="#capabilities">Property Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Activations</h4>
+        <ul>
+          <li><a href="https://clozingcre.com/brand-to-space/june12/recap.html">850 N Palm Canyon: Open House Recap</a></li>
+          <li><a href="https://clozingcre.com/brand-to-space/june12/850-modernism-week.html">850 N Palm Canyon: Modernism Week</a></li>
         </ul>
       </div>
       <div class="footer-col">
