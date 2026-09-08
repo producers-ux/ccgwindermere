@@ -93,6 +93,55 @@
     nav ul{ display:none; }
   }
 
+  .menu-toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    background:none;
+    border:none;
+    padding:8px;
+    cursor:pointer;
+  }
+  .menu-toggle span{
+    width:22px; height:2px;
+    background:var(--ink-soft);
+    display:block;
+    transition:transform 0.2s, opacity 0.2s;
+  }
+  .menu-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .menu-toggle.open span:nth-child(2){ opacity:0; }
+  .menu-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:var(--paper);
+    border-bottom:1px solid var(--hairline);
+    padding:8px 40px 24px;
+  }
+  .mobile-menu a{
+    padding:14px 0;
+    border-top:1px solid var(--hairline);
+    font-size:0.95rem;
+    color:var(--ink-soft);
+    text-decoration:none;
+  }
+  .mobile-menu a.mobile-cta{
+    margin-top:12px;
+    text-align:center;
+    border:1px solid var(--ink);
+    border-top:1px solid var(--ink);
+    color:var(--ink);
+    font-size:0.85rem;
+  }
+  .mobile-menu.open{ display:flex; }
+
+  @media (max-width:900px){
+    .menu-toggle{ display:flex; }
+    .nav-cta{ display:none; }
+  }
+
   /* ---------- HERO ---------- */
   .hero{
     padding:96px 0 70px;
@@ -379,6 +428,17 @@
       </ul>
     </nav>
     <a class="nav-cta" href="mailto:kate@clozingcre.com?subject=Inquiry%20from%20Commercial%20Capital%20Group">Schedule a call</a>
+    <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open');this.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="#practice">Practice</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#markets">Markets</a>
+    <a href="#team">Team</a>
+    <a href="listings.html">Listings</a>
+    <a href="mailto:kate@clozingcre.com?subject=Inquiry%20from%20Commercial%20Capital%20Group" class="mobile-cta">Schedule a call</a>
   </div>
 </header>
 
