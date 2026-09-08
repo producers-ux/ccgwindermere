@@ -448,6 +448,14 @@
   }
   .filter-btn.active, .filter-btn:hover{ background:var(--ink); color:var(--cream-text); border-color:var(--ink); }
 
+  .firstlook-note{
+    font-size:0.82rem;
+    color:var(--slate);
+    padding:16px 0 0;
+    max-width:70ch;
+  }
+  .firstlook-note strong{ color:var(--brass); }
+
   .section-label{ padding:44px 0 4px; }
   .section-label .tag{ font-size:0.8rem; color:var(--brass); letter-spacing:0.02em; }
   .section-label p{ font-size:0.88rem; color:var(--slate); margin-top:4px; }
@@ -590,14 +598,11 @@
     <button class="filter-btn" data-filter="lease">For Lease</button>
     <button class="filter-btn" data-filter="nnn">NNN</button>
     <button class="filter-btn" data-filter="1031">1031 Ready</button>
+    <button class="filter-btn" data-filter="sellerfinancing">Seller Financing</button>
     <button class="filter-btn" data-filter="firstlook">First Look</button>
   </div>
 
-  <!-- FOR LEASE -->
-  <div class="listing-section" data-section="lease">
-  <div class="section-label">
-    <div class="tag">Public Listings &middot; For Lease &middot; On LoopNet &amp; CoStar</div>
-  </div>
+  <p class="firstlook-note">&#11041; <strong>First Look</strong> listings are off-market &mdash; not on LoopNet or CoStar. They exist through direct owner relationships and Coachella Valley market knowledge built since 2003.</p>
 
   <div class="listings-grid">
 
@@ -689,16 +694,6 @@
       </div>
     </div>
 
-  </div>
-  </div>
-
-  <!-- FOR SALE -->
-  <div class="listing-section" data-section="sale">
-  <div class="section-label">
-    <div class="tag">Public Listings &middot; For Sale &middot; On LoopNet &amp; CoStar</div>
-  </div>
-
-  <div class="listings-grid">
 
     <div class="listing-card" data-category="sale 1031">
       <img class="card-img" src="https://images1.loopnet.com/i2/f3GZy5yjC_ukzI9zC03CFS32EmJDApU6KFon6U_TEtQ/116/67590-Jones-Rd-Cathedral-City-CA-Primary-Photo-1-LargeHighDefinition.jpg" alt="67590 Jones Rd, Cathedral City" loading="lazy">
@@ -724,7 +719,7 @@
       </div>
     </div>
 
-    <div class="listing-card" data-category="sale">
+    <div class="listing-card" data-category="sale sellerfinancing">
       <img class="card-img" src="https://images1.loopnet.com/i2/AjcOHZ4Uw-hwuUyKs8p2B2FuBIYDMK69PhVBqRYwHXw/116/66735-Pierson-Blvd-Desert-Hot-Springs-CA-Primary-Photo-1-LargeHighDefinition.jpg" alt="66735 Pierson Blvd, Desert Hot Springs" loading="lazy">
       <div class="card-body">
         <div class="card-badge-row">
@@ -748,7 +743,7 @@
       </div>
     </div>
 
-    <div class="listing-card" data-category="sale">
+    <div class="listing-card" data-category="sale sellerfinancing">
       <div class="card-img-placeholder">
         <div class="prop-code">0 Carrizo Rd &middot; Mountain Center</div>
         <div class="prop-status">Land For Sale</div>
@@ -774,20 +769,6 @@
       </div>
     </div>
 
-  </div>
-  </div>
-
-  <!-- FIRST LOOK -->
-  <div class="listing-section" data-section="firstlook">
-  <div class="first-look-header">
-    <div>
-      <h2>First Look &mdash; <em>Off Market.</em></h2>
-      <p>Not on LoopNet. Not on CoStar. These deals exist because of direct owner relationships and Coachella Valley market knowledge built since 2003. When you see the &#11041; badge, you're seeing something the market hasn't.</p>
-      <div class="fl-badge">&#11041; First Look &middot; Principals Only</div>
-    </div>
-  </div>
-
-  <div class="listings-grid">
 
     <div class="listing-card" data-category="sale firstlook">
       <div class="card-img-placeholder">
@@ -841,7 +822,7 @@
       </div>
     </div>
 
-    <div class="listing-card" data-category="sale firstlook">
+    <div class="listing-card" data-category="sale firstlook sellerfinancing">
       <div class="card-img-placeholder">
         <div class="prop-code">AB &middot; Arena Blanca Rd</div>
         <div class="prop-status">Photo Coming Soon</div>
@@ -895,7 +876,6 @@
       </div>
     </div>
 
-  </div>
   </div>
 
   <!-- CTA -->
@@ -962,11 +942,6 @@
       const cats = (card.dataset.category || '').split(' ');
       const show = filter === 'all' || cats.includes(filter);
       card.style.display = show ? '' : 'none';
-    });
-    document.querySelectorAll('.listing-section').forEach(section => {
-      const cards = section.querySelectorAll('.listing-card');
-      const anyVisible = Array.from(cards).some(c => c.style.display !== 'none');
-      section.style.display = anyVisible ? '' : 'none';
     });
   }
 
