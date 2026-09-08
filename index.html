@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commercial Capital Group | Commercial Real Estate Team</title>
+<meta name="description" content="Commercial Capital Group: institutional-grade commercial real estate advisory for the Coachella Valley and California. An affiliated practice of Windermere Commercial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#151e27;
+    --ink-soft:#2a3540;
+    --parchment:#efe9dc;
+    --paper:#f7f4ec;
+    --brass:#a9822c;
+    --slate:#56635c;
+    --hairline:#cfc7b4;
+    --hairline-dark:#3a4650;
+    --cream-text:#f3efe4;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+  @media (max-width:640px){ .wrap{ padding:0 22px; } }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:20;
+    background:rgba(247,244,236,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 0;
+  }
+  .mark-group{
+    display:flex; flex-direction:column; align-items:flex-start; gap:8px;
+  }
+  .mark{
+    display:flex; flex-direction:column; line-height:1;
+  }
+  .mark-name{
+    font-family:'Fraunces', serif;
+    font-size:1.28rem;
+    font-weight:500;
+    letter-spacing:0.01em;
+  }
+  .mark-sub{
+    font-size:0.68rem;
+    color:var(--slate);
+    margin-top:5px;
+    letter-spacing:0.02em;
+  }
+  nav ul{
+    display:flex; gap:34px; list-style:none; margin:0; padding:0;
+    font-size:0.88rem;
+  }
+  nav a{ text-decoration:none; color:var(--ink-soft); }
+  nav a:hover{ color:var(--brass); }
+  .nav-cta{
+    border:1px solid var(--ink);
+    padding:9px 18px;
+    font-size:0.85rem;
+    text-decoration:none;
+    color:var(--ink);
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--ink); color:var(--cream-text); }
+  @media (max-width:900px){
+    nav ul{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:96px 0 70px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:60px;
+    align-items:end;
+  }
+  @media (max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; gap:40px; }
+  }
+  .eyebrow{
+    font-size:0.86rem;
+    color:var(--slate);
+    margin-bottom:22px;
+  }
+  .eyebrow span{ color:var(--brass); }
+  .hero h1{
+    font-size:clamp(2.6rem, 5vw, 4.1rem);
+    line-height:1.04;
+    max-width:14ch;
+  }
+  .hero-lede{
+    margin-top:26px;
+    font-size:1.15rem;
+    max-width:46ch;
+    color:var(--ink-soft);
+  }
+  .hero-figures{
+    border-left:1px solid var(--hairline);
+    padding-left:36px;
+  }
+  .figure-row{
+    padding:16px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .figure-row:first-child{ padding-top:0; }
+  .figure-row:last-child{ border-bottom:none; }
+  .figure-num{
+    font-family:'Fraunces', serif;
+    font-size:1.9rem;
+    font-weight:500;
+  }
+  .figure-label{
+    font-size:0.82rem;
+    color:var(--slate);
+    margin-top:2px;
+  }
+
+  /* ---------- SECTION LABELS ---------- */
+  .section{ padding:84px 0; border-bottom:1px solid var(--hairline); }
+  .section-head{
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:40px;
+    margin-bottom:52px;
+  }
+  @media (max-width:760px){
+    .section-head{ grid-template-columns:1fr; gap:14px; }
+  }
+  .section-tag{ font-size:0.86rem; color:var(--slate); }
+  .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.35rem); max-width:16ch; }
+
+  /* ---------- LEDGER (capabilities) ---------- */
+  .ledger-row{
+    display:grid;
+    grid-template-columns:0.8fr 1fr 1.6fr;
+    gap:32px;
+    padding:26px 0;
+    border-top:1px solid var(--hairline);
+    align-items:baseline;
+  }
+  .ledger-row:last-child{ border-bottom:1px solid var(--hairline); }
+  @media (max-width:760px){
+    .ledger-row{ grid-template-columns:1fr; gap:6px; }
+  }
+  .ledger-cat{ font-size:0.8rem; color:var(--brass); }
+  .ledger-title{ font-family:'Fraunces', serif; font-size:1.28rem; font-weight:500; }
+  .ledger-desc{ color:var(--ink-soft); font-size:0.98rem; }
+
+  /* ---------- MARKETS ---------- */
+  .markets-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+  }
+  @media (max-width:760px){ .markets-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:480px){ .markets-grid{ grid-template-columns:1fr; } }
+  .market-cell{
+    background:var(--paper);
+    padding:30px 26px;
+  }
+  .market-tag{ font-size:0.76rem; color:var(--slate); margin-bottom:10px; }
+  .market-cell h3{ font-family:'Fraunces', serif; font-size:1.12rem; font-weight:500; margin-bottom:8px; }
+  .market-cell p{ font-size:0.92rem; color:var(--ink-soft); margin:0; }
+
+  /* ---------- PRINCIPALS ---------- */
+  .principals{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:44px;
+  }
+  @media (max-width:820px){ .principals{ grid-template-columns:1fr; } }
+  .principal{ border-top:1px solid var(--hairline); padding-top:22px; }
+  .p-name{ font-family:'Fraunces', serif; font-size:1.2rem; font-weight:500; }
+  .p-role{ font-size:0.84rem; color:var(--brass); margin-top:4px; }
+  .p-bio{ font-size:0.92rem; color:var(--ink-soft); margin-top:14px; }
+
+  /* ---------- INSTITUTIONAL BAND (dark) ---------- */
+  .band{
+    background:var(--ink);
+    color:var(--cream-text);
+    padding:80px 0;
+  }
+  .band .section-tag{ color:#9aa7ac; }
+  .band h2{ color:var(--cream-text); }
+  .band-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:36px 60px;
+  }
+  @media (max-width:700px){ .band-grid{ grid-template-columns:1fr; } }
+  .band-item{ border-top:1px solid var(--hairline-dark); padding-top:18px; }
+  .band-item h3{ font-size:1.05rem; font-weight:500; color:var(--cream-text); margin-bottom:8px; }
+  .band-item p{ font-size:0.92rem; color:#c7cdd0; margin:0; }
+  .quote{
+    margin-top:60px;
+    font-family:'Fraunces', serif;
+    font-size:1.5rem;
+    font-weight:400;
+    max-width:34ch;
+    color:var(--cream-text);
+    line-height:1.35;
+  }
+  .quote-attr{ font-size:0.85rem; color:#9aa7ac; margin-top:16px; font-family:'IBM Plex Sans', sans-serif; }
+
+  /* ---------- CTA ---------- */
+  .cta-section{ padding:96px 0; text-align:left; }
+  .cta-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  @media (max-width:760px){ .cta-grid{ grid-template-columns:1fr; } }
+  .cta-section h2{ font-size:clamp(2rem, 4vw, 2.9rem); max-width:16ch; }
+  .cta-actions{ display:flex; flex-direction:column; gap:14px; align-items:flex-start; }
+  .btn-primary, .btn-secondary{
+    display:inline-block;
+    padding:15px 26px;
+    font-size:0.92rem;
+    text-decoration:none;
+    width:100%;
+    text-align:center;
+  }
+  .btn-primary{ background:var(--ink); color:var(--cream-text); }
+  .btn-primary:hover{ background:var(--brass); }
+  .btn-secondary{ border:1px solid var(--ink); color:var(--ink); }
+  .btn-secondary:hover{ border-color:var(--brass); color:var(--brass); }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top:1px solid var(--hairline);
+    padding:50px 0 40px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    gap:30px;
+    margin-bottom:34px;
+  }
+  @media (max-width:700px){ .footer-grid{ grid-template-columns:1fr; gap:26px; } }
+  .footer-brand p{ font-size:0.92rem; color:var(--slate); max-width:36ch; margin-top:14px; }
+  .footer-col h4{ font-size:0.8rem; color:var(--slate); margin-bottom:14px; font-weight:500; }
+  .footer-col ul{ list-style:none; margin:0; padding:0; font-size:0.9rem; }
+  .footer-col li{ margin-bottom:9px; }
+  .footer-col a{ text-decoration:none; }
+  .footer-col a:hover{ color:var(--brass); }
+  .affiliate-line{
+    display:flex; align-items:center; gap:12px;
+    padding-top:26px; border-top:1px solid var(--hairline);
+    font-size:0.82rem; color:var(--slate);
+    flex-wrap:wrap;
+  }
+  .windermere-mark{
+    font-family:'Fraunces', serif;
+    font-size:0.95rem;
+    color:var(--ink);
+    letter-spacing:0.01em;
+    border-left:1px solid var(--hairline);
+    padding-left:12px;
+  }
+  .legal{ font-size:0.78rem; color:var(--slate); margin-top:20px; }
+
+  .ccg-label{
+    font-family:'Fraunces', serif;
+    font-size:0.95rem;
+    font-weight:500;
+    letter-spacing:0.06em;
+    color:var(--slate);
+  }
+  .header-windermere{
+    height:36px;
+    width:auto;
+    display:block;
+    filter:grayscale(1);
+    opacity:0.85;
+  }
+  .footer-windermere{
+    height:22px;
+    width:auto;
+    display:block;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-inner">
+<div class="mark-group">
+    <img class="header-windermere" src="data:image/png;base64,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" alt="Windermere Commercial">
+    <div class="mark">
+      <span class="ccg-label">CCG</span>
+    </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#practice">Practice</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#markets">Markets</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="mailto:kate@clozingcre.com?subject=Inquiry%20from%20Commercial%20Capital%20Group">Schedule a call</a>
+  </div>
+</header>
+
+<section class="hero" id="practice">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">An affiliated practice of <span>Windermere Commercial</span> · Palm Springs</div>
+      <h1>Commercial real estate, handled with institutional discipline.</h1>
+      <p class="hero-lede">Commercial Capital Group is a commercial real estate team advising owners and investors on the transactions that carry weight: acquisitions, dispositions, repositioning, and the leasing strategy behind every deal. We bring institutional discipline to a market that rewards it.</p>
+    </div>
+    <div class="hero-figures">
+      <div class="figure-row">
+        <div class="figure-num">CA + WA</div>
+        <div class="figure-label">Licensed jurisdictions</div>
+      </div>
+      <div class="figure-row">
+        <div class="figure-num">2003</div>
+        <div class="figure-label">Desert market roots</div>
+      </div>
+      <div class="figure-row">
+        <div class="figure-num">3</div>
+        <div class="figure-label">Senior principals at the table</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="capabilities">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Capabilities</div>
+      <h2>Advisory built for the deals that carry consequence.</h2>
+    </div>
+
+    <div class="ledger-row">
+      <div class="ledger-cat">Acquisitions</div>
+      <div class="ledger-title">Investment Sales</div>
+      <div class="ledger-desc">Office, retail, hospitality, mixed-use, and land. We represent HNW principals with institutional rigor and boutique attention to each asset.</div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-cat">Value-Add</div>
+      <div class="ledger-title">Repositioning &amp; Strategy</div>
+      <div class="ledger-desc">Value-add underwriting and asset repositioning plans that turn underperforming properties into premium, income-producing opportunities.</div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-cat">Leasing</div>
+      <div class="ledger-title">Tenant Representation</div>
+      <div class="ledger-desc">From flagship retailers to boutique hospitality brands, we secure space that performs, across Palm Canyon Drive and beyond.</div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-cat">Leasing</div>
+      <div class="ledger-title">Landlord Services</div>
+      <div class="ledger-desc">Positioning, leasing strategy, and broker activation for legacy commercial properties seeking modern tenants and premium rents.</div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-cat">Placemaking</div>
+      <div class="ledger-title">Brand-to-Space Matching</div>
+      <div class="ledger-desc">Curating tenants that elevate properties: activating commercial real estate as a platform for culture and commerce.</div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-cat">Exchange &amp; Valuation</div>
+      <div class="ledger-title">1031 Exchange &amp; Valuation</div>
+      <div class="ledger-desc">Strategic like-kind exchange execution, inbound California and outbound Pacific Northwest, backed by independent cap rate analysis that holds up in due diligence.</div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-cat">Advisory</div>
+      <div class="ledger-title">Advisory</div>
+      <div class="ledger-desc">Strategic counsel for owners, investors, and developers navigating complex commercial decisions, from deal structure through long-term asset strategy.</div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-cat">Development</div>
+      <div class="ledger-title">Development</div>
+      <div class="ledger-desc">Ground-up project guidance from site selection through entitlement and delivery. We bring desert market intel to every phase, so projects pencil before they break ground.</div>
+    </div>
+    <div class="ledger-row">
+      <div class="ledger-cat">Operations</div>
+      <div class="ledger-title">Commercial Property Management</div>
+      <div class="ledger-desc">Day-to-day operations, tenant relations, and asset oversight for owners who want performance without the hands-on burden.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="markets">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Markets</div>
+      <h2>Where we work.</h2>
+    </div>
+    <div class="markets-grid">
+      <div class="market-cell">
+        <div class="market-tag">Primary market</div>
+        <h3>Greater Palm Springs &amp; Coachella Valley</h3>
+        <p>Our home market. From Palm Springs to Indio, deep knowledge of every corridor and every major landlord, active since 2003.</p>
+      </div>
+      <div class="market-cell">
+        <div class="market-tag">Extended market</div>
+        <h3>High Desert &amp; Inland Empire</h3>
+        <p>Twentynine Palms, Joshua Tree, Yucca Valley: the outlier desert markets generating outsized investor interest.</p>
+      </div>
+      <div class="market-cell">
+        <div class="market-tag">Southern California</div>
+        <h3>Los Angeles &amp; Orange County</h3>
+        <p>1031 exchange buyers and investors seeking desert exposure, with deal flow originating from LA and Orange County.</p>
+      </div>
+      <div class="market-cell">
+        <div class="market-tag">Pacific Northwest</div>
+        <h3>Washington State</h3>
+        <p>Managing Broker licensed, with Seattle-market relationships and cross-state investment advisory.</p>
+      </div>
+      <div class="market-cell">
+        <div class="market-tag">Northern California</div>
+        <h3>Bay Area &amp; Sacramento</h3>
+        <p>NorCal investors moving south, connecting Bay Area and Sacramento buyers to desert and SoCal opportunities.</p>
+      </div>
+      <div class="market-cell">
+        <div class="market-tag">Southern California</div>
+        <h3>San Diego &amp; Surrounding Region</h3>
+        <p>Statewide buyer relationships. California-licensed for any transaction, in any market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Our edge</div>
+      <h2>Why owners and investors choose Commercial Capital Group.</h2>
+    </div>
+    <div class="band-grid">
+      <div class="band-item">
+        <h3>Desert-first market intelligence</h3>
+        <p>Coachella Valley roots since 2003. We don't parachute in. We track every listing and know who holds what.</p>
+      </div>
+      <div class="band-item">
+        <h3>Cross-state deal capability</h3>
+        <p>CA and WA licensed. We run 1031 exchanges, interstate acquisitions, and multi-market portfolio strategies without handoffs.</p>
+      </div>
+      <div class="band-item">
+        <h3>Brokerage discipline, brand fluency</h3>
+        <p>We underwrite like an institution and position like a brand strategist: who belongs here, and why it matters to the asset's value.</p>
+      </div>
+      <div class="band-item">
+        <h3>Windermere network and resources</h3>
+        <p>The reach of a major regional brand, the attention of a boutique practice. Windermere Commercial's platform behind every engagement.</p>
+      </div>
+    </div>
+    <p class="quote">"Palm Springs isn't a secondary market anymore. It's a primary investment destination, and the window is still open."</p>
+    <p class="quote-attr">Commercial Capital Group, 2026</p>
+  </div>
+</section>
+
+<section class="section" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">The principals</div>
+      <h2>Real estate depth, three ways.</h2>
+    </div>
+    <div class="principals">
+      <div class="principal">
+        <div class="p-name">Kate Pawlicki Bourne</div>
+        <div class="p-role">WA Managing Broker · CA Agent Incoming</div>
+        <p class="p-bio">Founder of PulpLab, with enterprise clients including Microsoft, Meta, and Google/YouTube. Kate brings sixteen years of brand strategy and executive communications to the commercial real estate team she builds alongside Slav and MK, focused on tenant strategy, investment sales, and creative and cultural properties.</p>
+      </div>
+      <div class="principal">
+        <div class="p-name">Slavyan Panayotov</div>
+        <div class="p-role">Principal Broker</div>
+        <p class="p-bio">A trusted commercial real estate advisor with deep expertise across the Coachella Valley. Slav brings transaction-level intelligence and long-standing client relationships to every deal.</p>
+      </div>
+      <div class="principal">
+        <div class="p-name">Mahnaz Khazen Shadman</div>
+        <div class="p-role">Principal</div>
+        <p class="p-bio">MK brings a sophisticated investor perspective and client-first approach developed across years of California commercial transactions and portfolio strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap cta-grid">
+    <h2>Ready to make a move?</h2>
+    <div class="cta-actions">
+      <a class="btn-primary" href="tel:+14426770396">Call (442) 677-0396</a>
+      <a class="btn-secondary" href="mailto:kate@clozingcre.com?subject=Inquiry%20from%20Commercial%20Capital%20Group">Send an email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="mark-name">Commercial Capital Group</span>
+        <p>Institutional-grade commercial real estate advisory serving Palm Springs, the Coachella Valley, and greater California.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <ul>
+          <li><a href="#capabilities">Investment Sales</a></li>
+          <li><a href="#capabilities">Repositioning &amp; Strategy</a></li>
+          <li><a href="#capabilities">Advisory</a></li>
+          <li><a href="#capabilities">Development</a></li>
+          <li><a href="#capabilities">Property Management</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/pulpinc/">KPB on LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/slavtherealtor/">Slav on LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/mahnaz-khazen-shadman-a2a68a10/">MK on LinkedIn</a></li>
+          <li><a href="https://windermerecommercial.com">Windermere Commercial</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="affiliate-line">
+      An affiliated team of
+      <img class="footer-windermere" src="data:image/png;base64,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" alt="Windermere Commercial">
+    </div>
+    <p class="legal">© 2026 Commercial Capital Group. All rights reserved. CA DRE Licensed. WA Managing Broker Licensed. An affiliated team of Windermere Commercial, Palm Springs.</p>
+  </div>
+</footer>
+
+</body>
+</html>
