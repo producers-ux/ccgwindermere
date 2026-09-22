@@ -224,20 +224,56 @@
   .section-head h2{ font-size:clamp(1.7rem, 3vw, 2.35rem); max-width:16ch; }
 
   /* ---------- LEDGER (capabilities) ---------- */
-  .ledger-row{
-    display:grid;
-    grid-template-columns:0.8fr 1fr 1.6fr;
-    gap:32px;
-    padding:26px 0;
+  .ledger-item{
     border-top:1px solid var(--hairline);
+  }
+  .ledger-item:last-child{ border-bottom:1px solid var(--hairline); }
+  .ledger-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    width:100%;
+    padding:24px 0;
+    background:none;
+    border:none;
+    font:inherit;
+    color:inherit;
+    text-align:left;
+    cursor:pointer;
+  }
+  .ledger-header-text{
+    display:flex;
     align-items:baseline;
+    gap:32px;
+    flex:1;
   }
-  .ledger-row:last-child{ border-bottom:1px solid var(--hairline); }
+  .ledger-cat{ font-size:0.8rem; color:var(--brass); min-width:160px; flex:none; }
   @media (max-width:760px){
-    .ledger-row{ grid-template-columns:1fr; gap:6px; }
+    .ledger-header{ align-items:flex-start; }
+    .ledger-header-text{ flex-direction:column; gap:4px; }
+    .ledger-cat{ min-width:0; }
   }
-  .ledger-cat{ font-size:0.8rem; color:var(--brass); }
   .ledger-title{ font-family:'Fraunces', serif; font-size:1.28rem; font-weight:500; }
+  .ledger-chevron{
+    flex:none;
+    width:18px; height:18px;
+    color:var(--slate);
+    transition:transform 0.25s ease;
+  }
+  .ledger-item.is-open .ledger-chevron{ transform:rotate(135deg); }
+  .ledger-panel{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease;
+  }
+  .ledger-panel-inner{
+    padding:0 0 26px;
+    max-width:640px;
+  }
+  @media (min-width:761px){
+    .ledger-panel-inner{ padding-left:192px; }
+  }
   .ledger-desc{ color:var(--ink-soft); font-size:0.98rem; }
   .ledger-links{
     display:flex; flex-wrap:wrap; gap:20px;
@@ -497,61 +533,159 @@
       <h2>Representation built for buyers of consequence.</h2>
     </div>
 
-    <div class="ledger-row">
-      <div class="ledger-cat">Buyer Broker</div>
-      <div class="ledger-title">Buyer Representation</div>
-      <div class="ledger-desc">We represent you from first search to closing: sourcing on- and off-market properties, underwriting each opportunity, negotiating price and terms, and managing diligence. Call us today about our special discount on buyer broker listings.</div>
-    </div>
-
-    <div class="ledger-row">
-      <div class="ledger-cat">Acquisitions</div>
-      <div class="ledger-title">Investment Acquisitions</div>
-      <div class="ledger-desc">Office, retail, hospitality, mixed-use, and land. We source and evaluate opportunities for HNW principals with institutional rigor and boutique attention to each asset.</div>
-    </div>
-    <div class="ledger-row">
-      <div class="ledger-cat">Value-Add</div>
-      <div class="ledger-title">Repositioning &amp; Strategy</div>
-      <div class="ledger-desc">Value-add underwriting and asset repositioning plans that turn underperforming properties into premium, income-producing opportunities.</div>
-    </div>
-    <div class="ledger-row">
-      <div class="ledger-cat">Leasing</div>
-      <div class="ledger-title">Tenant Representation</div>
-      <div class="ledger-desc">From flagship retailers to boutique hospitality brands, we secure space that performs, across Palm Canyon Drive and beyond.</div>
-    </div>
-    <div class="ledger-row">
-      <div class="ledger-cat">Leasing</div>
-      <div class="ledger-title">Landlord Services</div>
-      <div class="ledger-desc">Positioning, leasing strategy, and broker activation for legacy commercial properties seeking modern tenants and premium rents.</div>
-    </div>
-    <div class="ledger-row">
-      <div class="ledger-cat">Placemaking</div>
-      <div class="ledger-title">Brand-to-Space Matching</div>
-      <div class="ledger-desc">Curating tenants that elevate properties: activating commercial real estate as a platform for culture and commerce.
-        <div class="ledger-links">
-          <a href="https://clozingcre.com/brand-to-space/june12/recap.html">850 N Palm Canyon: Open House Recap →</a>
-          <a href="https://clozingcre.com/brand-to-space/june12/850-modernism-week.html">850 N Palm Canyon: Modernism Week →</a>
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Buyer Broker</span>
+          <span class="ledger-title">Buyer Representation</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">We represent you from first search to closing: sourcing on- and off-market properties, underwriting each opportunity, negotiating price and terms, and managing diligence. Call us today about our special discount on buyer broker listings.</div>
         </div>
       </div>
     </div>
-    <div class="ledger-row">
-      <div class="ledger-cat">Exchange &amp; Valuation</div>
-      <div class="ledger-title">1031 Exchange &amp; Valuation</div>
-      <div class="ledger-desc">Strategic like-kind exchange execution, inbound California and outbound Pacific Northwest, backed by independent cap rate analysis that holds up in due diligence.</div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Acquisitions</span>
+          <span class="ledger-title">Investment Acquisitions</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">Office, retail, hospitality, mixed-use, and land. We source and evaluate opportunities for HNW principals with institutional rigor and boutique attention to each asset.</div>
+        </div>
+      </div>
     </div>
-    <div class="ledger-row">
-      <div class="ledger-cat">Advisory</div>
-      <div class="ledger-title">Advisory</div>
-      <div class="ledger-desc">Strategic counsel for owners, investors, and developers navigating complex commercial decisions, from deal structure through long-term asset strategy.</div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Value-Add</span>
+          <span class="ledger-title">Repositioning &amp; Strategy</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">Value-add underwriting and asset repositioning plans that turn underperforming properties into premium, income-producing opportunities.</div>
+        </div>
+      </div>
     </div>
-    <div class="ledger-row">
-      <div class="ledger-cat">Development</div>
-      <div class="ledger-title">Development</div>
-      <div class="ledger-desc">Ground-up project guidance from site selection through entitlement and delivery. We bring desert market intel to every phase, so projects pencil before they break ground.</div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Leasing</span>
+          <span class="ledger-title">Tenant Representation</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">From flagship retailers to boutique hospitality brands, we secure space that performs, across Palm Canyon Drive and beyond.</div>
+        </div>
+      </div>
     </div>
-    <div class="ledger-row">
-      <div class="ledger-cat">Operations</div>
-      <div class="ledger-title">Commercial Property Management</div>
-      <div class="ledger-desc">Day-to-day operations, tenant relations, and asset oversight for owners who want performance without the hands-on burden.</div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Leasing</span>
+          <span class="ledger-title">Landlord Services</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">Positioning, leasing strategy, and broker activation for legacy commercial properties seeking modern tenants and premium rents.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Placemaking</span>
+          <span class="ledger-title">Brand-to-Space Matching</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">Curating tenants that elevate properties: activating commercial real estate as a platform for culture and commerce.
+            <div class="ledger-links">
+              <a href="https://clozingcre.com/brand-to-space/june12/recap.html">850 N Palm Canyon: Open House Recap →</a>
+              <a href="https://clozingcre.com/brand-to-space/june12/850-modernism-week.html">850 N Palm Canyon: Modernism Week →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Exchange &amp; Valuation</span>
+          <span class="ledger-title">1031 Exchange &amp; Valuation</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">Strategic like-kind exchange execution, inbound California and outbound Pacific Northwest, backed by independent cap rate analysis that holds up in due diligence.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Advisory</span>
+          <span class="ledger-title">Advisory</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">Strategic counsel for owners, investors, and developers navigating complex commercial decisions, from deal structure through long-term asset strategy.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Development</span>
+          <span class="ledger-title">Development</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">Ground-up project guidance from site selection through entitlement and delivery. We bring desert market intel to every phase, so projects pencil before they break ground.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ledger-item">
+      <button class="ledger-header" type="button" aria-expanded="false">
+        <span class="ledger-header-text">
+          <span class="ledger-cat">Operations</span>
+          <span class="ledger-title">Commercial Property Management</span>
+        </span>
+        <svg class="ledger-chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16M10 4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="ledger-panel">
+        <div class="ledger-panel-inner">
+          <div class="ledger-desc">Day-to-day operations, tenant relations, and asset oversight for owners who want performance without the hands-on burden.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -723,5 +857,30 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.ledger-header').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.closest('.ledger-item');
+      var panel = item.querySelector('.ledger-panel');
+      var isOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.ledger-item.is-open').forEach(function(other){
+        if(other !== item){
+          other.classList.remove('is-open');
+          other.querySelector('.ledger-header').setAttribute('aria-expanded','false');
+          other.querySelector('.ledger-panel').style.maxHeight = null;
+        }
+      });
+      if(isOpen){
+        item.classList.remove('is-open');
+        btn.setAttribute('aria-expanded','false');
+        panel.style.maxHeight = null;
+      } else {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded','true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
 </body>
 </html>
