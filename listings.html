@@ -482,6 +482,22 @@
   .card-img-placeholder .prop-code{ font-size:0.85rem; font-weight:600; letter-spacing:0.04em; color:var(--ink-soft); }
   .card-img-placeholder .prop-status{ font-size:0.72rem; letter-spacing:0.05em; color:var(--brass); text-transform:uppercase; }
 
+  /* Multifamily designed header (no photo) */
+  .card-mf{
+    position:relative; width:100%; height:200px; overflow:hidden;
+    background:linear-gradient(160deg,var(--ink) 0%,var(--ink-soft) 100%);
+    color:var(--cream-text); padding:18px 22px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .card-mf .mf-photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2; }
+  .card-mf svg{ position:absolute; right:0; bottom:0; width:70%; height:78%; color:var(--brass); opacity:0.22; pointer-events:none; }
+  .card-mf .mf-top{ position:relative; display:flex; justify-content:space-between; align-items:flex-start; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:#c7cdd0; }
+  .card-mf .mf-name{ color:var(--brass); font-weight:600; }
+  .card-mf .mf-main{ position:relative; display:flex; align-items:baseline; gap:10px; }
+  .card-mf .mf-units{ font-family:'Fraunces',serif; font-size:4rem; font-weight:400; line-height:0.9; letter-spacing:-0.02em; }
+  .card-mf .mf-units-label{ font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--brass); }
+  .card-mf .mf-bottom{ position:relative; display:flex; justify-content:space-between; font-size:0.72rem; letter-spacing:0.05em; color:#c7cdd0; border-top:1px solid var(--hairline-dark); padding-top:10px; }
+
   .card-body{ padding:22px 22px 20px; flex:1; display:flex; flex-direction:column; }
   .card-badge-row{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
   .badge{ font-size:0.65rem; letter-spacing:0.05em; text-transform:uppercase; padding:4px 9px; font-weight:500; }
@@ -601,11 +617,360 @@
     <button class="filter-btn" data-filter="1031">1031 Ready</button>
     <button class="filter-btn" data-filter="sellerfinancing">Seller Financing</button>
     <button class="filter-btn" data-filter="firstlook">First Look</button>
+    <button class="filter-btn" data-filter="multifamily">Multifamily</button>
   </div>
 
   <p class="firstlook-note">&#11041; <strong>First Look</strong> listings are off-market &mdash; not on LoopNet or CoStar. They exist through direct owner relationships and Coachella Valley market knowledge built since 2003.</p>
 
   <div class="listings-grid">
+
+    <!-- ===== MULTIFAMILY PORTFOLIO (added 2026-09-24) ===== -->
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="77-83-9th-street.jpg" alt="77-83 9th Street" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>San Francisco</span><span></span></div><div class="mf-main"><span class="mf-units">56</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1912</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; 56 Units</p>
+        <p class="card-address">77-83 9th Street</p>
+        <p class="card-city">San Francisco, CA 94103</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$9,995,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">56</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">22,670 SF &middot; 1912</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$178,482</div></div>
+        </div>
+        <p class="card-desc">44 studios, 10 one-bedrooms and 2 commercial spaces. 22,670 SF, built 1912. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%2077-83%209th%20Street%2C%20San%20Francisco&amp;body=I%20am%20interested%20in%2077-83%209th%20Street.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="2555-2567-foothill-blvd.jpg" alt="2555-2567 Foothill Blvd" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span class="mf-name">Casa Magna</span></div><div class="mf-main"><span class="mf-units">61</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>2014 renovation</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; Casa Magna</p>
+        <p class="card-address">2555-2567 Foothill Blvd</p>
+        <p class="card-city">Oakland, CA 94601</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$11,501,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">61</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">30,012 SF &middot; 2014 renovation</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$188,541</div></div>
+        </div>
+        <p class="card-desc">21 studios, 18 one-bedrooms and 22 two-bedrooms. 30,012 SF, built 2014 renovation. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%202555-2567%20Foothill%20Blvd%2C%20Oakland&amp;body=I%20am%20interested%20in%202555-2567%20Foothill%20Blvd.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="1757-26th-ave.jpg" alt="1757 26th Ave" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span class="mf-name">Kensington Plaza</span></div><div class="mf-main"><span class="mf-units">39</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1928</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; Kensington Plaza</p>
+        <p class="card-address">1757 26th Ave</p>
+        <p class="card-city">Oakland, CA 94601</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$6,995,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">39</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">25,447 SF &middot; 1928</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$179,359</div></div>
+        </div>
+        <p class="card-desc">39-unit multifamily. 25,447 SF, built 1928. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%201757%2026th%20Ave%2C%20Oakland&amp;body=I%20am%20interested%20in%201757%2026th%20Ave.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="2624-foothill-blvd.jpg" alt="2624 Foothill Blvd" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span class="mf-name">Kensington Manor</span></div><div class="mf-main"><span class="mf-units">40</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1925</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; Kensington Manor</p>
+        <p class="card-address">2624 Foothill Blvd</p>
+        <p class="card-city">Oakland, CA 94601</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$6,995,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">40</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">29,423 SF &middot; 1925</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$174,875</div></div>
+        </div>
+        <p class="card-desc">18 studios, 19 one-bedrooms and 3 two-bedrooms. 29,423 SF, built 1925. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%202624%20Foothill%20Blvd%2C%20Oakland&amp;body=I%20am%20interested%20in%202624%20Foothill%20Blvd.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="1900-26th-ave.jpg" alt="1900 26th Ave" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span class="mf-name">Kensington Gardens</span></div><div class="mf-main"><span class="mf-units">41</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1928</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; Kensington Gardens</p>
+        <p class="card-address">1900 26th Ave</p>
+        <p class="card-city">Oakland, CA 94601</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$7,995,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">41</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">31,889 SF &middot; 1928</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$195,000</div></div>
+        </div>
+        <p class="card-desc">24 studios, 13 one-bedrooms and 4 two-bedrooms, plus 43 garages. 31,889 SF, built 1928. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%201900%2026th%20Ave%2C%20Oakland&amp;body=I%20am%20interested%20in%201900%2026th%20Ave.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="303-lee-street.jpg" alt="303 Lee Street" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span></span></div><div class="mf-main"><span class="mf-units">25</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1964</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; 25 Units</p>
+        <p class="card-address">303 Lee Street</p>
+        <p class="card-city">Oakland, CA 94610</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$6,995,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">25</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">18,720 SF &middot; 1964</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$279,800</div></div>
+        </div>
+        <p class="card-desc">25-unit multifamily. 18,720 SF, built 1964. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%20303%20Lee%20Street%2C%20Oakland&amp;body=I%20am%20interested%20in%20303%20Lee%20Street.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="3104-3112-3130-14th-ave.jpg" alt="3104-3112 &amp; 3130 14th Ave" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span></span></div><div class="mf-main"><span class="mf-units">29</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1949</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; 29 Units</p>
+        <p class="card-address">3104-3112 &amp; 3130 14th Ave</p>
+        <p class="card-city">Oakland, CA 94602</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$5,779,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">29</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">32,382 SF &middot; 1949</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$199,276</div></div>
+        </div>
+        <p class="card-desc">23 one-bedrooms, 2 studios and 4 two-bedrooms. 32,382 SF, built 1949. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%203104-3112%20%26%203130%2014th%20Ave%2C%20Oakland&amp;body=I%20am%20interested%20in%203104-3112%20%26%203130%2014th%20Ave.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="5412-claremont-ave.jpg" alt="5412 Claremont Ave" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span></span></div><div class="mf-main"><span class="mf-units">33</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1963</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; 33 Units</p>
+        <p class="card-address">5412 Claremont Ave</p>
+        <p class="card-city">Oakland, CA 94618</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$9,874,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">33</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">16,830 SF &middot; 1963</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$299,212</div></div>
+        </div>
+        <p class="card-desc">All one-bedroom units. 16,830 SF, built 1963. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%205412%20Claremont%20Ave%2C%20Oakland&amp;body=I%20am%20interested%20in%205412%20Claremont%20Ave.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="5499-claremont-ave.jpg" alt="5499 Claremont Ave" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span class="mf-name">Silvergate</span></div><div class="mf-main"><span class="mf-units">24</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1960</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; Silvergate</p>
+        <p class="card-address">5499 Claremont Ave</p>
+        <p class="card-city">Oakland, CA 94618</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$7,152,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">24</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">12,600 SF &middot; 1960</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$298,000</div></div>
+        </div>
+        <p class="card-desc">All one-bedroom units. 12,600 SF, built 1960. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%205499%20Claremont%20Ave%2C%20Oakland&amp;body=I%20am%20interested%20in%205499%20Claremont%20Ave.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="2124-90th-ave-2125-92nd-ave.jpg" alt="2124 90th Ave &amp; 2125 92nd Ave" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span class="mf-name">Casa Grande</span></div><div class="mf-main"><span class="mf-units">32</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1964</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; Casa Grande</p>
+        <p class="card-address">2124 90th Ave &amp; 2125 92nd Ave</p>
+        <p class="card-city">Oakland, CA 94605</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$4,995,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">32</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">28,000 SF &middot; 1964</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$156,094</div></div>
+        </div>
+        <p class="card-desc">32-unit multifamily. 28,000 SF, built 1964. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%202124%2090th%20Ave%20%26%202125%2092nd%20Ave%2C%20Oakland&amp;body=I%20am%20interested%20in%202124%2090th%20Ave%20%26%202125%2092nd%20Ave.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="2605-9th-ave.jpg" alt="2605 9th Ave" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span></span></div><div class="mf-main"><span class="mf-units">10</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1964</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; 10 Units</p>
+        <p class="card-address">2605 9th Ave</p>
+        <p class="card-city">Oakland, CA 94606</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$2,598,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">10</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">7,600 SF &middot; 1964</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$259,800</div></div>
+        </div>
+        <p class="card-desc">8 two-bedrooms and 2 one-bedrooms. 7,600 SF, built 1964. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%202605%209th%20Ave%2C%20Oakland&amp;body=I%20am%20interested%20in%202605%209th%20Ave.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="437-hyde-street.jpg" alt="437 Hyde Street" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>San Francisco</span><span></span></div><div class="mf-main"><span class="mf-units">12</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1922</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; 12 Units</p>
+        <p class="card-address">437 Hyde Street</p>
+        <p class="card-city">San Francisco, CA 94109</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$2,695,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">12</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">5,998 SF &middot; 1922</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$224,583</div></div>
+        </div>
+        <p class="card-desc">All studios. 5,998 SF, built 1922. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%20437%20Hyde%20Street%2C%20San%20Francisco&amp;body=I%20am%20interested%20in%20437%20Hyde%20Street.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="416-422-turk-street.jpg" alt="416-422 Turk Street" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>San Francisco</span><span></span></div><div class="mf-main"><span class="mf-units">28</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1907</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; 28 Units</p>
+        <p class="card-address">416-422 Turk Street</p>
+        <p class="card-city">San Francisco, CA 94102</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$5,995,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">28</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">19,780 SF &middot; 1907</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$214,107</div></div>
+        </div>
+        <p class="card-desc">25 residential and 3 commercial units. 19,780 SF, built 1907. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%20416-422%20Turk%20Street%2C%20San%20Francisco&amp;body=I%20am%20interested%20in%20416-422%20Turk%20Street.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="6131-gettysburg-place.jpg" alt="6131 Gettysburg Place" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Stockton</span><span class="mf-name">Lincoln Village</span></div><div class="mf-main"><span class="mf-units">53</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1972</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; Lincoln Village</p>
+        <p class="card-address">6131 Gettysburg Place</p>
+        <p class="card-city">Stockton, CA 95207</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$9,985,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">53</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">36,042 SF &middot; 1972</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$188,396</div></div>
+        </div>
+        <p class="card-desc">22 one-bedrooms and 31 two-bedrooms. 36,042 SF, built 1972. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%206131%20Gettysburg%20Place%2C%20Stockton&amp;body=I%20am%20interested%20in%206131%20Gettysburg%20Place.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card" data-category="sale multifamily 1031">
+      <div class="card-mf"><img class="mf-photo" src="765-o-farrell-street.jpg" alt="765 O'Farrell Street" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>San Francisco</span><span></span></div><div class="mf-main"><span class="mf-units">33</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>1924</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; 33 Units</p>
+        <p class="card-address">765 O'Farrell Street</p>
+        <p class="card-city">San Francisco, CA 94109</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$7,295,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">33</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">16,768 SF &middot; 1924</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$221,061</div></div>
+        </div>
+        <p class="card-desc">7 studios, 24 junior one-bedrooms and 2 two-bedrooms. 16,768 SF, built 1924. Offered individually, in combination, or as part of a 15-property Bay Area and Stockton multifamily portfolio. Rent roll and financials available upon request.</p>
+        <div class="card-actions">
+          <a class="btn-primary" href="mailto:Mahnaz@Windermere.com?cc=kate@clozingcre.com&amp;subject=Inquiry%3A%20765%20O%27Farrell%20Street%2C%20San%20Francisco&amp;body=I%20am%20interested%20in%20765%20O%27Farrell%20Street.%0A%0AName%3A%0ACompany%3A%0APhone%3A%0A1031%20Exchange%20%28Y%2FN%29%3A">Inquire</a>
+        </div>
+      </div>
+    </div>
+
 
     <div class="listing-card" data-category="lease">
       <a href="850-n-palm-canyon.html">
