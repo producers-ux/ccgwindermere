@@ -465,6 +465,72 @@
     width:auto;
     display:block;
   }
+
+  /* Featured listings */
+  .feat-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap:24px;
+    padding:24px 0 8px;
+  }
+  .listing-card{
+    background:var(--paper);
+    border:1px solid var(--hairline);
+    display:flex; flex-direction:column;
+    transition:box-shadow 0.2s;
+  }
+  .listing-card:hover{ box-shadow:0 10px 30px rgba(21,30,39,0.08); }
+  .card-img{ width:100%; height:200px; object-fit:cover; display:block; background:var(--parchment); }
+  .listing-card > a{ display:block; }
+  .card-img-placeholder{
+    width:100%; height:200px; background:var(--parchment);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  }
+  .card-img-placeholder .prop-code{ font-size:0.85rem; font-weight:600; letter-spacing:0.04em; color:var(--ink-soft); }
+  .card-img-placeholder .prop-status{ font-size:0.72rem; letter-spacing:0.05em; color:var(--brass); text-transform:uppercase; }
+
+  /* Multifamily designed header (no photo) */
+  .card-mf{
+    position:relative; width:100%; height:200px; overflow:hidden;
+    background:linear-gradient(160deg,var(--ink) 0%,var(--ink-soft) 100%);
+    color:var(--cream-text); padding:18px 22px;
+    display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .card-mf .mf-photo{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2; }
+  .card-mf svg{ position:absolute; right:0; bottom:0; width:70%; height:78%; color:var(--brass); opacity:0.22; pointer-events:none; }
+  .card-mf .mf-top{ position:relative; display:flex; justify-content:space-between; align-items:flex-start; font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase; color:#c7cdd0; }
+  .card-mf .mf-name{ color:var(--brass); font-weight:600; }
+  .card-mf .mf-main{ position:relative; display:flex; align-items:baseline; gap:10px; }
+  .card-mf .mf-units{ font-family:'Fraunces',serif; font-size:4rem; font-weight:400; line-height:0.9; letter-spacing:-0.02em; }
+  .card-mf .mf-units-label{ font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--brass); }
+  .card-mf .mf-bottom{ position:relative; display:flex; justify-content:space-between; font-size:0.72rem; letter-spacing:0.05em; color:#c7cdd0; border-top:1px solid var(--hairline-dark); padding-top:10px; }
+
+  .card-body{ padding:22px 22px 20px; flex:1; display:flex; flex-direction:column; }
+  .card-badge-row{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+  .badge{ font-size:0.65rem; letter-spacing:0.05em; text-transform:uppercase; padding:4px 9px; font-weight:500; }
+  .badge-sale{ background:var(--ink); color:var(--cream-text); }
+  .badge-lease{ background:var(--brass); color:var(--cream-text); }
+  .badge-firstlook{ background:var(--parchment); color:var(--brass); border:1px solid var(--brass); }
+  .badge-green{ background:#e4ebe0; color:#3f5d42; }
+  .badge-coming{ background:var(--parchment); color:var(--slate); }
+
+  .card-type{ font-size:0.76rem; color:var(--slate); letter-spacing:0.02em; margin-bottom:5px; }
+  .card-address{ font-family:'Fraunces', serif; font-size:1.15rem; font-weight:500; line-height:1.2; }
+  .card-city{ font-size:0.85rem; color:var(--slate); margin-top:2px; margin-bottom:16px; }
+
+  .card-stats{
+    display:grid; grid-template-columns:1fr 1fr; gap:12px 16px;
+    padding:14px 0; border-top:1px solid var(--hairline); margin-bottom:14px;
+  }
+  .stat-label{ font-size:0.66rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--slate); margin-bottom:2px; }
+  .stat-value{ font-size:0.95rem; font-weight:500; color:var(--ink); line-height:1.2; }
+  .feat-grid{ grid-template-columns:repeat(2,1fr); padding:8px 0 0; }
+  a.listing-card{ color:inherit; text-decoration:none; }
+  a.listing-card .card-city{ margin-bottom:12px; }
+  .card-more{ margin-top:auto; font-size:0.8rem; letter-spacing:0.04em; color:var(--brass); font-weight:500; }
+  .feat-cta{ display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-top:32px; padding-top:24px; border-top:1px solid var(--hairline); }
+  .feat-cta p{ color:var(--slate); font-size:0.95rem; max-width:52ch; }
+  @media (max-width:680px){ .feat-grid{ grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -506,7 +572,7 @@
       <p class="hero-lede">Commercial Capital Group is a commercial real estate team focused on buyers. We find the right property, negotiate on your side, and carry the deal through diligence to close. When you sign a buyer broker listing with us, we represent you.</p>
       <div class="season-offer">
         <strong>Special discount</strong>
-        Call us today to arrange a special discount on your buyer broker listing: <a href="tel:+14426770396">(442) 677-0396</a>
+        Call us today to arrange a special discount on your buyer broker listing: <a href="tel:+18442248326">1-844-CCG-TEAM</a>
       </div>
     </div>
     <div class="hero-figures">
@@ -522,6 +588,56 @@
         <div class="figure-num">2</div>
         <div class="figure-label">Senior principals at the table</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="featured-listings">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Listings</div>
+      <h2>Featured properties.</h2>
+    </div>
+    <div class="listings-grid feat-grid">
+      <a class="listing-card" href="listings.html">
+      <div class="card-mf"><img class="mf-photo" src="2555-2567-foothill-blvd.jpg" alt="2555-2567 Foothill Blvd" loading="lazy" onerror="this.remove()"><svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 118h190M20 118V52h34v66M54 118V30h40v88M94 118V62h30v88M124 118V20h36v98M160 118V64h30v54"/><path d="M28 62h6M40 62h6M28 76h6M40 76h6M28 90h6M40 90h6M62 42h8M78 42h8M62 58h8M78 58h8M62 74h8M78 74h8M62 90h8M78 90h8M132 32h8M146 32h8M132 48h8M146 48h8M132 64h8M146 64h8M132 80h8M146 80h8"/></svg><div class="mf-top"><span>Oakland</span><span class="mf-name">Casa Magna</span></div><div class="mf-main"><span class="mf-units">61</span><span class="mf-units-label">Units</span></div><div class="mf-bottom"><span>Multifamily</span><span>2014 renovation</span></div></div>
+      <div class="card-body">
+        <div class="card-badge-row">
+          <span class="badge badge-sale">For Sale</span>
+          <span class="badge badge-green">Multifamily</span>
+        </div>
+        <p class="card-type">Multifamily &middot; Casa Magna</p>
+        <p class="card-address">2555-2567 Foothill Blvd</p>
+        <p class="card-city">Oakland, CA 94601</p>
+        <div class="card-stats">
+          <div><div class="stat-label">Ask Price</div><div class="stat-value">$11,501,000</div></div>
+          <div><div class="stat-label">Units</div><div class="stat-value">61</div></div>
+          <div><div class="stat-label">Building</div><div class="stat-value">30,012 SF &middot; 2014 renovation</div></div>
+          <div><div class="stat-label">Price / Unit</div><div class="stat-value">$188,541</div></div>
+        </div>
+        <span class="card-more">View listing &rarr;</span>
+      </div>
+    </a>
+
+      <a class="listing-card" href="850-n-palm-canyon.html">
+        <img class="card-img" src="https://images1.loopnet.com/i2/mli7FSipUZ1G3KFzJM971vy50SZPITYUMsUpHBAgzK4/116/850-N-Palm-Canyon-Dr-Palm-Springs-CA-Primary-Photo-1-LargeHighDefinition.jpg" alt="850 N Palm Canyon Dr, Palm Springs" loading="lazy">
+        <div class="card-body">
+          <div class="card-badge-row"><span class="badge badge-lease">For Lease</span></div>
+          <p class="card-type">Retail / Creative Office &middot; Mixed Use</p>
+          <p class="card-address">850 N Palm Canyon Dr</p>
+          <p class="card-city">Palm Springs, CA 92262</p>
+          <div class="card-stats">
+            <div><div class="stat-label">Size</div><div class="stat-value">4,180 SF</div></div>
+            <div><div class="stat-label">Annual Rate / SF</div><div class="stat-value">$51.00/SF/YR</div></div>
+            <div><div class="stat-label">Availability</div><div class="stat-value">Immediate</div></div>
+          </div>
+          <span class="card-more">View listing &rarr;</span>
+        </div>
+      </a>
+    </div>
+    <div class="feat-cta">
+      <p>Multifamily portfolio listings across Northern California, plus retail, office and investment properties in Palm Springs and the Coachella Valley.</p>
+      <a class="btn-primary" href="listings.html">View all listings</a>
     </div>
   </div>
 </section>
@@ -809,7 +925,7 @@
       <p class="cta-note">Ask about our special discount on buyer broker listings.</p>
     </div>
     <div class="cta-actions">
-      <a class="btn-primary" href="tel:+14426770396">Call (442) 677-0396</a>
+      <a class="btn-primary" href="tel:+18442248326">Call 1-844-CCG-TEAM</a>
       <a class="btn-secondary" href="mailto:kate@clozingcre.com?subject=Inquiry%20from%20Commercial%20Capital%20Group">Send an email</a>
     </div>
   </div>
